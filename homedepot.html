@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+        .calculator {
+            margin: 50px auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            width: 300px;
+        }
+        input[type="number"] {
+            width: 100px;
+            padding: 5px;
+            margin: 5px;
+        }
+        button {
+            padding: 8px 15px;
+            background-color: #ff8400;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="calculator">
+        <h2>Price match calculator</h2>
+        <input type="number" id="num2" placeholder="HD price">
+        <br>
+        <input type="number" id="num1" placeholder="Competitor Price">
+        <br>
+        <button onclick="calculate()">Calculate</button>
+        <p id="result"></p>
+    </div>
+
+    <script>
+        function calculate() {
+            var num1 = parseFloat(document.getElementById("num1").value);
+            var num2 = parseFloat(document.getElementById("num2").value);
+
+            if (isNaN(num1) || isNaN(num2)) {
+                document.getElementById("result").textContent = "Please enter valid numbers.";
+            } else {
+                var sum = 0.9*num1 ;
+                var sum1 = num2 - sum;
+                var sumx = sum.toFixed(2)
+                var sumx1 = sum1.toFixed(2)
+                document.getElementById("result").textContent = "the reduced price the cx has to pay is : " + sumx + "$      the price difference to apply in sap : " + sumx1 + "$";
+            }
+        }
+    </script>
+    <div class="container">
+
+                    <a href="index.html">Back to Mainpage</a>
+                </div>
+
+</body>
+</html>

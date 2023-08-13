@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Website</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        header {
+            background-color: #FF8C00;
+            color: white;
+            padding: 10px;
+            text-align: center;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            margin-top: 10px;
+        }
+        .search-result {
+            margin-top: 10px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Competitor Search</h1>
+    </header>
+    <div class="container">
+        <label for="searchInput">Search:</label>
+        <input type="text" id="searchInput" placeholder="Search..." aria-describedby="searchDesc">
+        <div id="searchResults" role="region" aria-live="polite" aria-atomic="true"></div>
+    </div>
+    <script>
+        const searchInput = document.getElementById('searchInput');
+        const searchResults = document.getElementById('searchResults');
+
+        searchInput.addEventListener('input', function() {
+            const searchTerm = searchInput.value.toLowerCase();
+            searchResults.innerHTML = '';
+
+            if (searchTerm.length === 0) {
+                return;
+            }
+
+            // Simulated search results (replace with your own data or search logic)
+            const mockData = ["ABACUS FURNITURE","ADAM TOOLS","ALPHA OUTLET","AMATI CANDA","AMAZON","AMRE SUPPLY","ATLAS TOOLS","ARRJ","AU LIT ON DORT","AWNINGS CANDA","BAD BOY","BATH DEPOT","BATHIFY","BC FASTENERS","BESTBUY","BUILD","BUSY BEE TOOLS","CABELAS","CANAC","CANDA BREAKERS","CANADIAN APPLIANCES","CANADIAN TIRE","CANUCK TOOLS","COAST APPLIANCES","COHENS","CONSTRUCTION FASTENERS (cf-t.con)","EDMONTON FASTENERS AND TOOLS","ELITE TOOLS","ELMIRA HOME COMFORT","FEDRATED TOOL SUPPLY","FLOOR RENO"];
+
+            const matchingResults = mockData.filter(result => result.toLowerCase().includes(searchTerm));
+
+            if (matchingResults.length === 0) {
+                searchResults.innerHTML = '<p>No results found.</p>';
+            } else {
+                matchingResults.forEach(result => {
+                    const resultElement = document.createElement('p');
+                    resultElement.classList.add('search-result');
+                    resultElement.textContent = result;
+                    resultElement.addEventListener('click', function() {
+                        window.location.href = `details.html?result=${encodeURIComponent(result)}`;
+                    });
+                    searchResults.appendChild(resultElement);
+                });
+            }
+        });
+    </script>
+</body>
+</html>

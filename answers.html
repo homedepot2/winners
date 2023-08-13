@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dropdown Sections</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .section {
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            padding: 10px;
+        }
+        .dropdown-content {
+            display: none;
+            padding: 10px;
+            background-color: #f5f5f5;
+        }
+        .dropdown-button {
+            cursor: pointer;
+            border: none;
+            background: none;
+            text-decoration: underline;
+            color: orange;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="section">
+            <h2>Opening statements</h2>
+            <button class="dropdown-button" onclick="toggleDropdown('dropdown1')">Details</button>
+            <div class="dropdown-content" id="dropdown1">
+                <p>- Hello, Thank you for reaching out to Home depot. My name is +your name+. How may I assist you today?<br><br>-
+Greetings,We appreciate your contact with Home Depot. I'm +your name+, and I'm here to help. How can I be of assistance to you? </p>
+            </div>
+        </div>
+        <div class="section">
+            <h2>Closing and wrap up</h2>
+            <button class="dropdown-button" onclick="toggleDropdown('dropdown2')">Details</button>
+            <div class="dropdown-content" id="dropdown2">
+                <p>-Thank you for choosing to shop with Home Depot. We greatly value your feedback, as it helps us enhance our services. Kindly take a moment to complete our survey. Your insights are highly appreciated.<br><br>-
+We extend our gratitude for selecting Home Depot for your shopping needs. Your opinion holds immense value to us, and we kindly request you to spare a moment to participate in our survey. Your feedback plays a pivotal role in shaping our offerings and services. Thank you for your time and valuable input.</p>
+
+            </div>
+        </div>
+        <div class="section">
+            <h2>idle customer</h2>
+            <button class="dropdown-button" onclick="toggleDropdown('dropdown3')">Details</button>
+            <div class="dropdown-content" id="dropdown3">
+                <p>I haven't received a response from you for the past 10 minutes. If I don't hear from you soon, I will need to close this chat due to inactivity. If you still require assistance, please don't hesitate to reach out.</p>
+            </div>
+        </div>
+        <div class="section">
+            <h2>Gaining time.</h2>
+            <button class="dropdown-button" onclick="toggleDropdown('dropdown4')">Details</button>
+            <div class="dropdown-content" id="dropdown4">
+                <p>-Please allow me approximately 5-7 minutes as I work on processing your order. Your patience is greatly appreciated. If you have any further questions or concerns, feel free to let me know.<br><br>-I haven't received a response from you for the past 10 minutes. If I don't hear from you soon, I will need to close this chat due to inactivity. If you still require assistance, please don't hesitate to reach out.</p>
+            </div>
+        </div>
+    </div>
+    <script>
+        function toggleDropdown(id) {
+            const dropdown = document.getElementById(id);
+            dropdown.style.display = dropdown.style.display === 'block' ? 'none' : 'block';
+        }
+    </script>
+        <div class="container">
+
+                <a href="index.html">Back to mainpage</a>
+            </div>
+
+</body>
+</html>
